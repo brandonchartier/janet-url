@@ -4,7 +4,7 @@
   (if (nil? scheme) "" (string scheme "://")))
 
 (defn- format-auth [auth]
-  (if (nil? auth) "" (string auth "@")))
+  (if (nil? auth) "" (string (uri/escape auth) "@")))
 
 (defn- format-host [host]
   (if (nil? host) "" host))
@@ -16,7 +16,7 @@
   (if (nil? path) "" path))
 
 (defn- query-reducer [acc [k v]]
-  (array/push acc (string k "=" (uri/escape (string v)))))
+  (array/push acc (string (uri/escape (string k)) "=" (uri/escape (string v)))))
 
 (defn- format-query [dict]
   (if (nil? dict)
@@ -25,7 +25,7 @@
       (string "?" (string/join strings "&")))))
 
 (defn- format-hash [hash]
-  (if (nil? hash) "" (string "#" hash)))
+  (if (nil? hash) "" (string "#" (uri/escape hash))))
 
 (defn format
   "Creates a URL from keyword arguments."

@@ -18,6 +18,7 @@ URL formatting utilities for Janet.
   :query {:a 1 :b 2}
   :hash "my-hash")
   # "https://user:pass@www.example.com:8080/v1/my-path?a=1&b=2#my-hash"
+
 ```
 
 ## License
