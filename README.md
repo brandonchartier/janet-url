@@ -1,10 +1,12 @@
 # Janet URL
 
+URL formatting utilities for Janet.
+
 `jpm install https://github.com/brandonchartier/janet-url`
 
 ---
 
-```
+```janet
 (import url)
 
 (url/format
@@ -17,3 +19,7 @@
   :hash "my-hash")
   # "https://user:pass@www.example.com:8080/v1/my-path?a=1&b=2#my-hash"
 ```
+
+## License
+
+GPL-3.0
